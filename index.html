@@ -3,2370 +3,2330 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Enamel — Modern Dental Studio</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-
-:root{
-  --ivory:#F7F4EE;
-  --ivory-deep:#F0EBE0;
-  --ink:#173A38;
-  --ink-soft:#3F5957;
-  --teal:#1F5F5B;
-  --teal-deep:#0F2E2C;
-  --coral:#E8927C;
-  --coral-deep:#D97960;
-  --mint:#C9E0D3;
-  --line:#DCD4C4;
-  --white:#FFFDF9;
-  --radius:2px;
-}
-
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-@media (prefers-reduced-motion: reduce){
-  html{
-    scroll-behavior:auto;
+  :root{
+    --ivory:#F7F4EE;
+    --ivory-deep:#F0EBE0;
+    --ink:#173A38;
+    --ink-soft:#3F5957;
+    --teal:#1F5F5B;
+    --teal-deep:#0F2E2C;
+    --coral:#E8927C;
+    --coral-deep:#D97960;
+    --mint:#C9E0D3;
+    --line:#DCD4C4;
+    --white:#FFFDF9;
+    --radius:2px;
   }
 
   *{
-    animation-duration:0.01ms !important;
-    animation-iteration-count:1 !important;
-    transition-duration:0.01ms !important;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
   }
-}
 
-body{
-  background:var(--ivory);
-  color:var(--ink);
-  font-family:'Inter',sans-serif;
-  line-height:1.5;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-}
+  html{
+    scroll-behavior:smooth;
+  }
 
-h1,h2,h3,h4{
-  font-family:'Fraunces',serif;
-  font-weight:500;
-  letter-spacing:-0.01em;
-  color:var(--ink);
-}
+  @media (prefers-reduced-motion: reduce){
+    html{
+      scroll-behavior:auto;
+    }
 
-a{
-  color:inherit;
-}
+    *{
+      animation-duration:0.01ms !important;
+      animation-iteration-count:1 !important;
+      transition-duration:0.01ms !important;
+    }
+  }
 
-.mono{
-  font-family:'IBM Plex Mono',monospace;
-}
+  body{
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
 
-img,svg{
-  display:block;
-  max-width:100%;
-}
+  h1,h2,h3,h4{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+  }
 
-:focus-visible{
-  outline:2px solid var(--coral-deep);
-  outline-offset:3px;
-}
+  a{
+    color:inherit;
+  }
 
-.wrap{
-  max-width:1180px;
-  margin:0 auto;
-  padding:0 32px;
-}
+  .mono{
+    font-family:'IBM Plex Mono',monospace;
+  }
 
-@media (max-width:640px){
+  img,svg{
+    display:block;
+    max-width:100%;
+  }
+
+  :focus-visible{
+    outline:2px solid var(--coral-deep);
+    outline-offset:3px;
+  }
+
   .wrap{
-    padding:0 20px;
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
   }
-}
 
-/* NAV */
+  @media (max-width:640px){
+    .wrap{
+      padding:0 20px;
+    }
+  }
 
-header{
-  position:sticky;
-  top:0;
-  z-index:50;
-  background:rgba(247,244,238,0.88);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line);
-}
+  /* ---------- NAV ---------- */
 
-nav.wrap{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  height:76px;
-}
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(247,244,238,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
 
-.logo{
-  font-family:'Fraunces',serif;
-  font-size:1.35rem;
-  font-weight:600;
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
+  nav.wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:76px;
+  }
 
-.logo-mark{
-  width:26px;
-  height:26px;
-  flex-shrink:0;
-}
+  .logo{
+    font-family:'Fraunces',serif;
+    font-size:1.35rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
 
-.nav-links{
-  display:flex;
-  gap:36px;
-  list-style:none;
-}
+  .logo-mark{
+    width:26px;
+    height:26px;
+    flex-shrink:0;
+  }
 
-.nav-links a{
-  font-size:0.92rem;
-  text-decoration:none;
-  color:var(--ink-soft);
-  position:relative;
-  padding-bottom:4px;
-}
-
-.nav-links a::after{
-  content:'';
-  position:absolute;
-  left:0;
-  bottom:0;
-  width:0;
-  height:1px;
-  background:var(--coral-deep);
-  transition:width 0.25s ease;
-}
-
-.nav-links a:hover::after{
-  width:100%;
-}
-
-.nav-cta{
-  background:var(--teal);
-  color:var(--white);
-  text-decoration:none;
-  padding:11px 22px;
-  border-radius:var(--radius);
-  font-size:0.88rem;
-  font-weight:500;
-  border:1px solid var(--teal);
-  transition:background 0.2s ease,color 0.2s ease;
-  white-space:nowrap;
-}
-
-.nav-cta:hover{
-  background:var(--teal-deep);
-  border-color:var(--teal-deep);
-}
-
-@media (max-width:860px){
   .nav-links{
+    display:flex;
+    gap:36px;
+    list-style:none;
+  }
+
+  .nav-links a{
+    font-size:0.92rem;
+    text-decoration:none;
+    color:var(--ink-soft);
+    position:relative;
+    padding-bottom:4px;
+  }
+
+  .nav-links a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:0;
+    height:1px;
+    background:var(--coral-deep);
+    transition:width 0.25s ease;
+  }
+
+  .nav-links a:hover::after{
+    width:100%;
+  }
+
+  .nav-cta{
+    background:var(--teal);
+    color:var(--white);
+    text-decoration:none;
+    padding:11px 22px;
+    border-radius:var(--radius);
+    font-size:0.88rem;
+    font-weight:500;
+    border:1px solid var(--teal);
+    transition:background 0.2s ease,color 0.2s ease;
+    white-space:nowrap;
+  }
+
+  .nav-cta:hover{
+    background:var(--teal-deep);
+    border-color:var(--teal-deep);
+  }
+
+  .menu-btn{
+    display:none;
+    background:none;
+    border:none;
+    cursor:pointer;
+  }
+
+  @media (max-width:860px){
+    .nav-links{
+      display:none;
+    }
+
+    .menu-btn{
+      display:block;
+    }
+  }
+
+  /* ---------- HERO ---------- */
+
+  .hero{
+    padding:88px 0 40px;
+    position:relative;
+  }
+
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr 1fr;
+    gap:56px;
+    align-items:center;
+  }
+
+  @media (max-width:900px){
+    .hero-grid{
+      grid-template-columns:1fr;
+    }
+  }
+
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.78rem;
+    letter-spacing:0.06em;
+    color:var(--teal);
+    background:var(--mint);
+    padding:6px 12px;
+    border-radius:20px;
+    margin-bottom:22px;
+  }
+
+  .eyebrow::before{
+    content:'';
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:var(--coral-deep);
+  }
+
+  h1.headline{
+    font-size:clamp(2.4rem,5vw,3.6rem);
+    line-height:1.06;
+    max-width:11ch;
+  }
+
+  h1.headline em{
+    font-style:italic;
+    color:var(--teal);
+  }
+
+  .hero-sub{
+    margin-top:22px;
+    font-size:1.08rem;
+    color:var(--ink-soft);
+    max-width:42ch;
+  }
+
+  .hero-actions{
+    display:flex;
+    gap:16px;
+    margin-top:34px;
+    flex-wrap:wrap;
+  }
+
+  .btn-primary{
+    background:var(--coral-deep);
+    color:var(--white);
+    text-decoration:none;
+    padding:14px 26px;
+    border-radius:var(--radius);
+    font-weight:500;
+    font-size:0.95rem;
+    border:1px solid var(--coral-deep);
+    transition:transform 0.15s ease,box-shadow 0.15s ease;
+  }
+
+  .btn-primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px -8px rgba(217,121,96,0.55);
+  }
+
+  .btn-ghost{
+    color:var(--ink);
+    text-decoration:none;
+    padding:14px 8px;
+    font-size:0.95rem;
+    border-bottom:1px solid var(--ink);
+    font-weight:500;
+  }
+
+  .hero-stats{
+    display:flex;
+    gap:36px;
+    margin-top:52px;
+    padding-top:28px;
+    border-top:1px solid var(--line);
+  }
+
+  .stat-num{
+    font-family:'Fraunces',serif;
+    font-size:1.7rem;
+    color:var(--teal);
+  }
+
+  .stat-label{
+    font-size:0.8rem;
+    color:var(--ink-soft);
+    margin-top:2px;
+  }
+
+  /* ---------- SMILE DIAGRAM ---------- */
+
+  .smile-wrap{
+    position:relative;
+  }
+
+  .smile-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:28px;
+    position:relative;
+  }
+
+  .smile-card-label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;
+    color:var(--ink-soft);
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:14px;
+  }
+
+  .tooth{
+    cursor:pointer;
+    transition:transform 0.2s ease;
+  }
+
+  .tooth path,
+  .tooth ellipse{
+    fill:var(--ivory-deep);
+    stroke:var(--ink);
+    stroke-width:1.1;
+    transition:fill 0.2s ease;
+  }
+
+  .tooth text{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:7px;
+    fill:var(--ink-soft);
+    text-anchor:middle;
+  }
+
+  .tooth:hover path,
+  .tooth:hover ellipse,
+  .tooth.active path,
+  .tooth.active ellipse{
+    fill:var(--coral);
+    stroke:var(--coral-deep);
+  }
+
+  .tooth:hover,
+  .tooth.active{
+    transform:translateY(-3px);
+  }
+
+  .smile-info{
+    margin-top:18px;
+    padding-top:18px;
+    border-top:1px dashed var(--line);
+    min-height:78px;
+  }
+
+  .smile-info .tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;
+    color:var(--coral-deep);
+    display:block;
+    margin-bottom:6px;
+  }
+
+  .smile-info h4{
+    font-size:1.05rem;
+    margin-bottom:4px;
+  }
+
+  .smile-info p{
+    font-size:0.88rem;
+    color:var(--ink-soft);
+  }
+
+  .smile-hint{
+    font-size:0.76rem;
+    color:var(--ink-soft);
+    text-align:center;
+    margin-top:10px;
+  }
+
+  /* ---------- SHARED SECTIONS ---------- */
+
+  section{
+    padding:96px 0;
+  }
+
+  .section-head{
+    max-width:640px;
+    margin-bottom:56px;
+  }
+
+  .section-head .eyebrow{
+    background:transparent;
+    padding:0;
+    color:var(--coral-deep);
+  }
+
+  .section-head .eyebrow::before{
     display:none;
   }
-}
 
-/* HERO */
-
-.hero{
-  padding:88px 0 40px;
-  position:relative;
-}
-
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.05fr 1fr;
-  gap:56px;
-  align-items:center;
-}
-
-@media (max-width:900px){
-  .hero-grid{
-    grid-template-columns:1fr;
+  .section-head h2{
+    font-size:clamp(1.9rem,3.4vw,2.6rem);
+    margin-top:10px;
   }
-}
 
-.eyebrow{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  font-family:'IBM Plex Mono',monospace;
-  font-size:0.78rem;
-  letter-spacing:0.06em;
-  color:var(--teal);
-  background:var(--mint);
-  padding:6px 12px;
-  border-radius:20px;
-  margin-bottom:22px;
-}
+  .section-head p{
+    color:var(--ink-soft);
+    margin-top:14px;
+    font-size:1.02rem;
+    max-width:56ch;
+  }
 
-.eyebrow::before{
-  content:'';
-  width:6px;
-  height:6px;
-  border-radius:50%;
-  background:var(--coral-deep);
-}
+  /* ---------- SERVICES ---------- */
 
-h1.headline{
-  font-size:clamp(2.4rem,5vw,3.6rem);
-  line-height:1.06;
-  max-width:11ch;
-}
+  .services{
+    background:var(--ivory-deep);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
 
-h1.headline em{
-  font-style:italic;
-  color:var(--teal);
-}
-
-.hero-sub{
-  margin-top:22px;
-  font-size:1.08rem;
-  color:var(--ink-soft);
-  max-width:42ch;
-}
-
-.hero-actions{
-  display:flex;
-  gap:16px;
-  margin-top:34px;
-  flex-wrap:wrap;
-}
-
-.btn-primary{
-  background:var(--coral-deep);
-  color:var(--white);
-  text-decoration:none;
-  padding:14px 26px;
-  border-radius:var(--radius);
-  font-weight:500;
-  font-size:0.95rem;
-  border:1px solid var(--coral-deep);
-  transition:transform 0.15s ease,box-shadow 0.15s ease;
-}
-
-.btn-primary:hover{
-  transform:translateY(-2px);
-  box-shadow:0 8px 20px -8px rgba(217,121,96,0.55);
-}
-
-.btn-ghost{
-  color:var(--ink);
-  text-decoration:none;
-  padding:14px 8px;
-  font-size:0.95rem;
-  border-bottom:1px solid var(--ink);
-  font-weight:500;
-}
-
-.hero-stats{
-  display:flex;
-  gap:36px;
-  margin-top:52px;
-  padding-top:28px;
-  border-top:1px solid var(--line);
-}
-
-.stat-num{
-  font-family:'Fraunces',serif;
-  font-size:1.7rem;
-  color:var(--teal);
-}
-
-.stat-label{
-  font-size:0.8rem;
-  color:var(--ink-soft);
-  margin-top:2px;
-}
-
-/* SMILE DIAGRAM */
-
-.smile-wrap{
-  position:relative;
-}
-
-.smile-card{
-  background:var(--white);
-  border:1px solid var(--line);
-  border-radius:6px;
-  padding:28px;
-  position:relative;
-}
-
-.smile-card-label{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:0.72rem;
-  color:var(--ink-soft);
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:14px;
-}
-
-.tooth{
-  cursor:pointer;
-  transition:transform 0.2s ease;
-}
-
-.tooth path,
-.tooth ellipse{
-  fill:var(--ivory-deep);
-  stroke:var(--ink);
-  stroke-width:1.1;
-  transition:fill 0.2s ease;
-}
-
-.tooth text{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:7px;
-  fill:var(--ink-soft);
-  text-anchor:middle;
-}
-
-.tooth:hover path,
-.tooth:hover ellipse,
-.tooth.active path,
-.tooth.active ellipse{
-  fill:var(--coral);
-  stroke:var(--coral-deep);
-}
-
-.tooth:hover,
-.tooth.active{
-  transform:translateY(-3px);
-}
-
-.smile-info{
-  margin-top:18px;
-  padding-top:18px;
-  border-top:1px dashed var(--line);
-  min-height:78px;
-}
-
-.smile-info .tag{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:0.72rem;
-  color:var(--coral-deep);
-  display:block;
-  margin-bottom:6px;
-}
-
-.smile-info h4{
-  font-size:1.05rem;
-  margin-bottom:4px;
-}
-
-.smile-info p{
-  font-size:0.88rem;
-  color:var(--ink-soft);
-}
-
-.smile-hint{
-  font-size:0.76rem;
-  color:var(--ink-soft);
-  text-align:center;
-  margin-top:10px;
-}
-
-/* SECTIONS */
-
-section{
-  padding:96px 0;
-}
-
-.section-head{
-  max-width:640px;
-  margin-bottom:56px;
-}
-
-.section-head .eyebrow{
-  background:transparent;
-  padding:0;
-  color:var(--coral-deep);
-}
-
-.section-head .eyebrow::before{
-  display:none;
-}
-
-.section-head h2{
-  font-size:clamp(1.9rem,3.4vw,2.6rem);
-  margin-top:10px;
-}
-
-.section-head p{
-  color:var(--ink-soft);
-  margin-top:14px;
-  font-size:1.02rem;
-  max-width:56ch;
-}
-
-/* SERVICES */
-
-.services{
-  background:var(--ivory-deep);
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-}
-
-.service-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:1px;
-  background:var(--line);
-  border:1px solid var(--line);
-}
-
-@media (max-width:820px){
   .service-grid{
-    grid-template-columns:1fr 1fr;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
   }
-}
 
-@media (max-width:560px){
-  .service-grid{
-    grid-template-columns:1fr;
+  @media (max-width:820px){
+    .service-grid{
+      grid-template-columns:1fr 1fr;
+    }
   }
-}
 
-.service-card{
-  background:var(--ivory-deep);
-  padding:34px 30px;
-  transition:background 0.2s ease;
-}
+  @media (max-width:560px){
+    .service-grid{
+      grid-template-columns:1fr;
+    }
+  }
 
-.service-card:hover{
-  background:var(--white);
-}
+  .service-card{
+    background:var(--ivory-deep);
+    padding:34px 30px;
+    transition:background 0.2s ease;
+  }
 
-.service-num{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:0.78rem;
-  color:var(--coral-deep);
-}
+  .service-card:hover{
+    background:var(--white);
+  }
 
-.service-card h3{
-  font-size:1.2rem;
-  margin-top:14px;
-  margin-bottom:10px;
-}
+  .service-num{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.78rem;
+    color:var(--coral-deep);
+  }
 
-.service-card p{
-  color:var(--ink-soft);
-  font-size:0.92rem;
-}
+  .service-card h3{
+    font-size:1.2rem;
+    margin-top:14px;
+    margin-bottom:10px;
+  }
 
-/* PHILOSOPHY */
+  .service-card p{
+    color:var(--ink-soft);
+    font-size:0.92rem;
+  }
 
-.philosophy .wrap{
-  display:grid;
-  grid-template-columns:0.9fr 1.1fr;
-  gap:60px;
-  align-items:start;
-}
+  /* ---------- PHILOSOPHY ---------- */
 
-@media (max-width:860px){
   .philosophy .wrap{
-    grid-template-columns:1fr;
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:60px;
+    align-items:start;
   }
-}
 
-.philosophy blockquote{
-  font-family:'Fraunces',serif;
-  font-style:italic;
-  font-size:1.5rem;
-  line-height:1.4;
-  color:var(--teal-deep);
-  border-left:2px solid var(--coral);
-  padding-left:24px;
-}
+  @media (max-width:860px){
+    .philosophy .wrap{
+      grid-template-columns:1fr;
+    }
+  }
 
-.philosophy-points{
-  display:flex;
-  flex-direction:column;
-  gap:26px;
-  margin-top:8px;
-}
+  .philosophy blockquote{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:1.5rem;
+    line-height:1.4;
+    color:var(--teal-deep);
+    border-left:2px solid var(--coral);
+    padding-left:24px;
+  }
 
-.philosophy-point{
-  display:flex;
-  gap:18px;
-}
+  .philosophy-points{
+    display:flex;
+    flex-direction:column;
+    gap:26px;
+    margin-top:8px;
+  }
 
-.philosophy-point .p-mark{
-  font-family:'IBM Plex Mono',monospace;
-  color:var(--teal);
-  font-size:0.85rem;
-  flex-shrink:0;
-  padding-top:3px;
-}
+  .philosophy-point{
+    display:flex;
+    gap:18px;
+  }
 
-.philosophy-point h4{
-  font-size:1.05rem;
-  margin-bottom:5px;
-}
+  .philosophy-point .p-mark{
+    font-family:'IBM Plex Mono',monospace;
+    color:var(--teal);
+    font-size:0.85rem;
+    flex-shrink:0;
+    padding-top:3px;
+  }
 
-.philosophy-point p{
-  color:var(--ink-soft);
-  font-size:0.92rem;
-}
+  .philosophy-point h4{
+    font-size:1.05rem;
+    margin-bottom:5px;
+  }
 
-/* TEAM */
+  .philosophy-point p{
+    color:var(--ink-soft);
+    font-size:0.92rem;
+  }
 
-.team-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:28px;
-}
+  /* ---------- TEAM ---------- */
 
-@media (max-width:900px){
   .team-grid{
-    grid-template-columns:repeat(2,1fr);
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:28px;
   }
-}
 
-@media (max-width:520px){
-  .team-grid{
-    grid-template-columns:1fr;
+  @media (max-width:900px){
+    .team-grid{
+      grid-template-columns:repeat(2,1fr);
+    }
   }
-}
 
-.team-card{
-  border:1px solid var(--line);
-  border-radius:6px;
-  overflow:hidden;
-  background:var(--white);
-}
+  @media (max-width:520px){
+    .team-grid{
+      grid-template-columns:1fr;
+    }
+  }
 
-.team-photo{
-  aspect-ratio:4/5;
-  background:linear-gradient(155deg,var(--mint),var(--ivory-deep));
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
+  .team-card{
+    border:1px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
+    background:var(--white);
+  }
 
-.team-photo svg{
-  width:56%;
-}
+  .team-photo{
+    aspect-ratio:4/5;
+    background:linear-gradient(155deg,var(--mint),var(--ivory-deep));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
 
-.team-body{
-  padding:18px 20px 22px;
-}
+  .team-photo svg{
+    width:56%;
+  }
 
-.team-body h4{
-  font-size:1.05rem;
-}
+  .team-body{
+    padding:18px 20px 22px;
+  }
 
-.team-role{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:0.74rem;
-  color:var(--coral-deep);
-  margin:4px 0 10px;
-}
+  .team-body h4{
+    font-size:1.05rem;
+  }
 
-.team-body p{
-  font-size:0.86rem;
-  color:var(--ink-soft);
-}
+  .team-role{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.74rem;
+    color:var(--coral-deep);
+    margin:4px 0 10px;
+  }
 
-/* TESTIMONIALS */
+  .team-body p{
+    font-size:0.86rem;
+    color:var(--ink-soft);
+  }
 
-.testimonials{
-  background:var(--teal-deep);
-  color:var(--ivory);
-}
+  /* ---------- TESTIMONIALS ---------- */
 
-.testimonials .section-head h2,
-.testimonials .section-head p{
-  color:var(--ivory);
-}
+  .testimonials{
+    background:var(--teal-deep);
+    color:var(--ivory);
+  }
 
-.testimonials .eyebrow{
-  color:var(--coral);
-}
+  .testimonials .section-head h2,
+  .testimonials .section-head p{
+    color:var(--ivory);
+  }
 
-.t-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:28px;
-}
+  .testimonials .eyebrow{
+    color:var(--coral);
+  }
 
-@media (max-width:860px){
   .t-grid{
-    grid-template-columns:1fr;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
   }
-}
 
-.t-card{
-  background:rgba(247,244,238,0.06);
-  border:1px solid rgba(247,244,238,0.14);
-  border-radius:6px;
-  padding:28px;
-}
+  @media (max-width:860px){
+    .t-grid{
+      grid-template-columns:1fr;
+    }
+  }
 
-.t-card p{
-  font-size:0.98rem;
-  line-height:1.6;
-  opacity:0.92;
-}
+  .t-card{
+    background:rgba(247,244,238,0.06);
+    border:1px solid rgba(247,244,238,0.14);
+    border-radius:6px;
+    padding:28px;
+  }
 
-.t-name{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:0.78rem;
-  margin-top:18px;
-  opacity:0.7;
-}
+  .t-card p{
+    font-size:0.98rem;
+    line-height:1.6;
+    opacity:0.92;
+  }
 
-/* BOOKING */
+  .t-name{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.78rem;
+    margin-top:18px;
+    opacity:0.7;
+  }
 
-.booking .wrap{
-  background:var(--white);
-  border:1px solid var(--line);
-  border-radius:8px;
-  padding:56px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:50px;
-}
+  /* ---------- BOOKING ---------- */
 
-@media (max-width:860px){
   .booking .wrap{
-    grid-template-columns:1fr;
-    padding:36px 26px;
-  }
-}
-
-.booking h2{
-  font-size:clamp(1.8rem,3vw,2.3rem);
-}
-
-.booking p{
-  color:var(--ink-soft);
-  margin-top:14px;
-}
-
-.hours-list{
-  margin-top:26px;
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-}
-
-.hours-row{
-  display:flex;
-  justify-content:space-between;
-  font-size:0.9rem;
-  padding:6px 0;
-  border-bottom:1px solid var(--line);
-}
-
-.hours-row span:first-child{
-  color:var(--ink-soft);
-}
-
-.hours-row span:last-child{
-  font-family:'IBM Plex Mono',monospace;
-}
-
-/* FORM */
-
-form{
-  display:flex;
-  flex-direction:column;
-  gap:16px;
-}
-
-.field label{
-  display:block;
-  font-size:0.8rem;
-  color:var(--ink-soft);
-  margin-bottom:6px;
-  font-family:'IBM Plex Mono',monospace;
-}
-
-.field input,
-.field select,
-.field textarea{
-  width:100%;
-  border:1px solid var(--line);
-  background:var(--ivory);
-  padding:12px 14px;
-  border-radius:var(--radius);
-  font-family:'Inter',sans-serif;
-  font-size:0.95rem;
-  color:var(--ink);
-}
-
-.field input:focus,
-.field select:focus,
-.field textarea:focus{
-  outline:2px solid var(--teal);
-  outline-offset:1px;
-  border-color:var(--teal);
-}
-
-.field-row{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-}
-
-@media (max-width:480px){
-  .field-row{
-    grid-template-columns:1fr;
-  }
-}
-
-.submit-btn{
-  background:var(--teal);
-  color:var(--white);
-  border:none;
-  padding:14px 20px;
-  border-radius:var(--radius);
-  font-weight:500;
-  font-size:0.95rem;
-  cursor:pointer;
-  margin-top:6px;
-  transition:background 0.2s ease;
-}
-
-.submit-btn:hover{
-  background:var(--teal-deep);
-}
-
-.submit-btn:disabled{
-  opacity:0.65;
-  cursor:not-allowed;
-}
-
-.form-note{
-  font-size:0.78rem;
-  color:var(--ink-soft);
-  margin-top:2px;
-}
-
-.confirm-msg{
-  display:none;
-  background:var(--mint);
-  color:var(--teal-deep);
-  padding:14px 16px;
-  border-radius:var(--radius);
-  font-size:0.9rem;
-  margin-top:6px;
-}
-
-.confirm-msg.show{
-  display:block;
-}
-
-/* FOOTER */
-
-footer{
-  border-top:1px solid var(--line);
-  padding:56px 0 32px;
-}
-
-.footer-grid{
-  display:grid;
-  grid-template-columns:1.3fr 1fr 1fr 1fr;
-  gap:36px;
-}
-
-@media (max-width:760px){
-  .footer-grid{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:56px;
+    display:grid;
     grid-template-columns:1fr 1fr;
+    gap:50px;
   }
-}
 
-.footer-grid h5{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:0.78rem;
-  color:var(--ink-soft);
-  margin-bottom:14px;
-  letter-spacing:0.04em;
-}
+  @media (max-width:860px){
+    .booking .wrap{
+      grid-template-columns:1fr;
+      padding:36px 26px;
+    }
+  }
 
-.footer-grid ul{
-  list-style:none;
-  display:flex;
-  flex-direction:column;
-  gap:9px;
-}
+  .booking h2{
+    font-size:clamp(1.8rem,3vw,2.3rem);
+  }
 
-.footer-grid a{
-  text-decoration:none;
-  font-size:0.9rem;
-  color:var(--ink-soft);
-}
+  .booking p{
+    color:var(--ink-soft);
+    margin-top:14px;
+  }
 
-.footer-grid a:hover{
-  color:var(--ink);
-}
+  .hours-list{
+    margin-top:26px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
 
-.footer-bottom{
-  margin-top:48px;
-  padding-top:24px;
-  border-top:1px solid var(--line);
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:12px;
-  font-size:0.8rem;
-  color:var(--ink-soft);
-}
+  .hours-row{
+    display:flex;
+    justify-content:space-between;
+    font-size:0.9rem;
+    padding:6px 0;
+    border-bottom:1px solid var(--line);
+  }
 
-/* REVEAL */
+  .hours-row span:first-child{
+    color:var(--ink-soft);
+  }
 
-.reveal{
-  opacity:0;
-  transform:translateY(16px);
-  transition:opacity 0.6s ease,transform 0.6s ease;
-}
+  .hours-row span:last-child{
+    font-family:'IBM Plex Mono',monospace;
+  }
 
-.reveal.in{
-  opacity:1;
-  transform:translateY(0);
-}
+  form{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
 
+  .field label{
+    display:block;
+    font-size:0.8rem;
+    color:var(--ink-soft);
+    margin-bottom:6px;
+    font-family:'IBM Plex Mono',monospace;
+  }
+
+  .field input,
+  .field select,
+  .field textarea{
+    width:100%;
+    border:1px solid var(--line);
+    background:var(--ivory);
+    padding:12px 14px;
+    border-radius:var(--radius);
+    font-family:'Inter',sans-serif;
+    font-size:0.95rem;
+    color:var(--ink);
+  }
+
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus{
+    outline:2px solid var(--teal);
+    outline-offset:1px;
+    border-color:var(--teal);
+  }
+
+  .field-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+
+  @media (max-width:480px){
+    .field-row{
+      grid-template-columns:1fr;
+    }
+  }
+
+  .submit-btn{
+    background:var(--teal);
+    color:var(--white);
+    border:none;
+    padding:14px 20px;
+    border-radius:var(--radius);
+    font-weight:500;
+    font-size:0.95rem;
+    cursor:pointer;
+    margin-top:6px;
+    transition:background 0.2s ease,transform 0.15s ease;
+  }
+
+  .submit-btn:hover{
+    background:var(--teal-deep);
+    transform:translateY(-1px);
+  }
+
+  .form-note{
+    font-size:0.78rem;
+    color:var(--ink-soft);
+    margin-top:2px;
+  }
+
+  .confirm-msg{
+    display:none;
+    background:var(--mint);
+    color:var(--teal-deep);
+    padding:14px 16px;
+    border-radius:var(--radius);
+    font-size:0.9rem;
+    margin-top:6px;
+  }
+
+  .confirm-msg.show{
+    display:block;
+  }
+
+  /* ---------- FOOTER ---------- */
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:56px 0 32px;
+  }
+
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr 1fr 1fr;
+    gap:36px;
+  }
+
+  @media (max-width:760px){
+    .footer-grid{
+      grid-template-columns:1fr 1fr;
+    }
+  }
+
+  .footer-grid h5{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.78rem;
+    color:var(--ink-soft);
+    margin-bottom:14px;
+    letter-spacing:0.04em;
+  }
+
+  .footer-grid ul{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:9px;
+  }
+
+  .footer-grid a{
+    text-decoration:none;
+    font-size:0.9rem;
+    color:var(--ink-soft);
+  }
+
+  .footer-grid a:hover{
+    color:var(--ink);
+  }
+
+  .footer-bottom{
+    margin-top:48px;
+    padding-top:24px;
+    border-top:1px solid var(--line);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:12px;
+    font-size:0.8rem;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- REVEAL ---------- */
+
+  .reveal{
+    opacity:0;
+    transform:translateY(16px);
+    transition:opacity 0.6s ease,transform 0.6s ease;
+  }
+
+  .reveal.in{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  /* ---------- WHATSAPP BUTTON ---------- */
+
+  .whatsapp-float{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#25D366;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    box-shadow:0 8px 25px rgba(0,0,0,0.18);
+    z-index:100;
+    transition:transform 0.2s ease,box-shadow 0.2s ease;
+  }
+
+  .whatsapp-float:hover{
+    transform:translateY(-3px) scale(1.03);
+    box-shadow:0 12px 30px rgba(0,0,0,0.22);
+  }
+
+  .whatsapp-float svg{
+    width:30px;
+    height:30px;
+  }
+
+  @media (max-width:640px){
+    .whatsapp-float{
+      right:16px;
+      bottom:16px;
+      width:54px;
+      height:54px;
+    }
+  }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-
 <header>
+  <nav class="wrap">
 
-<nav class="wrap">
-
-  <div class="logo">
-
-    <svg
-      class="logo-mark"
-      viewBox="0 0 24 24"
-      fill="none"
-    >
-      <path
-        d="M12 2C8 2 5 5 5 9c0 3 1 4.5 1.5 8 .3 2 .8 3.5 2 3.5s1.4-1.8 1.7-3.2c.3-1.5.6-2.3 1.8-2.3s1.5.8 1.8 2.3c.3 1.4.5 3.2 1.7 3.2s1.7-1.5 2-3.5c.5-3.5 1.5-5 1.5-8 0-4-3-7-7-7Z"
+    <div class="logo">
+      <svg class="logo-mark" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2C8 2 5 5 5 9c0 3 1 4.5 1.5 8 .3 2 .8 3.5 2 3.5s1.4-1.8 1.7-3.2c.3-1.5.6-2.3 1.8-2.3s1.5.8 1.8 2.3c.3 1.4.5 3.2 1.7 3.2s1.7-1.5 2-3.5c.5-3.5 1.5-5 1.5-8 0-4-3-7-7-7Z"
         stroke="#173A38"
-        stroke-width="1.3"
-      />
-    </svg>
+        stroke-width="1.3"/>
+      </svg>
+      Enamel
+    </div>
 
-    Enamel
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#philosophy">Approach</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+    </ul>
 
-  </div>
+    <a href="#booking" class="nav-cta">Book a visit</a>
 
-  <ul class="nav-links">
-
-    <li>
-      <a href="#services">Services</a>
-    </li>
-
-    <li>
-      <a href="#philosophy">Approach</a>
-    </li>
-
-    <li>
-      <a href="#team">Team</a>
-    </li>
-
-    <li>
-      <a href="#reviews">Reviews</a>
-    </li>
-
-  </ul>
-
-  <a href="#booking" class="nav-cta">
-    Book a visit
-  </a>
-
-</nav>
-
+  </nav>
 </header>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
-<div class="wrap hero-grid">
-
-<div>
-
-  <span class="eyebrow">
-    Now accepting new patients
-  </span>
-
-  <h1 class="headline">
-    Dental care that starts with <em>listening</em>.
-  </h1>
-
-  <p class="hero-sub">
-    Enamel is a modern dental studio built around
-    unhurried appointments, clear explanations, and
-    treatment plans you actually understand before you
-    agree to them.
-  </p>
-
-  <div class="hero-actions">
-
-    <a href="#booking" class="btn-primary">
-      Book your first visit
-    </a>
-
-    <a href="#services" class="btn-ghost">
-      See our services
-    </a>
-
-  </div>
-
-  <div class="hero-stats">
+  <div class="wrap hero-grid">
 
     <div>
-      <div class="stat-num mono">
-        4.9<span style="font-size:1rem;">/5</span>
+
+      <span class="eyebrow">Now accepting new patients</span>
+
+      <h1 class="headline">
+        Dental care that starts with <em>listening</em>.
+      </h1>
+
+      <p class="hero-sub">
+        Enamel is a modern dental studio built around unhurried appointments,
+        clear explanations, and treatment plans you actually understand before
+        you agree to them.
+      </p>
+
+      <div class="hero-actions">
+
+        <a href="#booking" class="btn-primary">
+          Book your first visit
+        </a>
+
+        <a href="#services" class="btn-ghost">
+          See our services
+        </a>
+
       </div>
-      <div class="stat-label">
-        from 1,200+ patients
+
+      <div class="hero-stats">
+
+        <div>
+          <div class="stat-num mono">
+            4.9<span style="font-size:1rem;">/5</span>
+          </div>
+          <div class="stat-label">
+            from 1,200+ patients
+          </div>
+        </div>
+
+        <div>
+          <div class="stat-num mono">18</div>
+          <div class="stat-label">
+            years in practice
+          </div>
+        </div>
+
+        <div>
+          <div class="stat-num mono">32</div>
+          <div class="stat-label">
+            points of care — every tooth, every visit
+          </div>
+        </div>
+
       </div>
+
     </div>
 
-    <div>
-      <div class="stat-num mono">
-        18
-      </div>
-      <div class="stat-label">
-        years in practice
-      </div>
-    </div>
 
-    <div>
-      <div class="stat-num mono">
-        32
+    <!-- SMILE DIAGRAM -->
+
+    <div class="smile-wrap">
+
+      <div class="smile-card">
+
+        <div class="smile-card-label">
+          <span>UNIVERSAL NUMBERING SYSTEM</span>
+          <span>TAP A TOOTH</span>
+        </div>
+
+        <svg
+          id="smileSvg"
+          viewBox="0 0 460 170"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-label="Interactive diagram of teeth">
+        </svg>
+
+        <div class="smile-info" id="smileInfo">
+
+          <span class="tag">START HERE</span>
+
+          <h4>Tap any tooth</h4>
+
+          <p>
+            Each one links to the care we give it — front teeth for smile
+            design, molars for restorative work, and everywhere in between.
+          </p>
+
+        </div>
+
       </div>
-      <div class="stat-label">
-        points of care — every tooth, every visit
+
+      <div class="smile-hint">
+        Diagram uses the same 1–32 numbering your dentist writes on your chart.
       </div>
+
     </div>
 
   </div>
-
-</div>
-
-
-<!-- SMILE DIAGRAM -->
-
-<div class="smile-wrap">
-
-<div class="smile-card">
-
-  <div class="smile-card-label">
-
-    <span>
-      UNIVERSAL NUMBERING SYSTEM
-    </span>
-
-    <span>
-      TAP A TOOTH
-    </span>
-
-  </div>
-
-  <svg
-    id="smileSvg"
-    viewBox="0 0 460 170"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-label="Interactive diagram of teeth"
-  ></svg>
-
-  <div class="smile-info" id="smileInfo">
-
-    <span class="tag">
-      START HERE
-    </span>
-
-    <h4>
-      Tap any tooth
-    </h4>
-
-    <p>
-      Each one links to the care we give it —
-      front teeth for smile design, molars for
-      restorative work, and everywhere in between.
-    </p>
-
-  </div>
-
-</div>
-
-<div class="smile-hint">
-  Diagram uses the same 1–32 numbering your dentist
-  writes on your chart.
-</div>
-
-</div>
-
-</div>
 
 </section>
 
 
-<!-- SERVICES -->
+<!-- ================= SERVICES ================= -->
 
 <section class="services" id="services">
 
-<div class="wrap">
+  <div class="wrap">
 
-<div class="section-head reveal">
+    <div class="section-head reveal">
 
-  <span class="eyebrow">
-    What we treat
-  </span>
+      <span class="eyebrow">What we treat</span>
 
-  <h2>
-    Care organized around your mouth,
-    not our org chart.
-  </h2>
+      <h2>
+        Care organized around your mouth, not our org chart.
+      </h2>
 
-  <p>
-    Six areas of practice, each staffed by someone
-    who does mostly that — so you're never the first
-    case of the week.
-  </p>
+      <p>
+        Six areas of practice, each staffed by someone who does mostly that —
+        so you're never the first case of the week.
+      </p>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 
-<div class="wrap" style="padding:0;">
+  <div class="wrap" style="padding:0;">
 
-<div class="service-grid">
+    <div class="service-grid">
 
-<div class="service-card">
+      <div class="service-card">
 
-  <div class="service-num mono">01</div>
+        <div class="service-num mono">01</div>
 
-  <h3>
-    Preventive &amp; Hygiene
-  </h3>
+        <h3>Preventive &amp; Hygiene</h3>
 
-  <p>
-    Cleanings, exams, and sealants built around a
-    schedule that fits your actual risk, not a default
-    six months.
-  </p>
+        <p>
+          Cleanings, exams, and sealants built around a schedule that fits
+          your actual risk, not a default six months.
+        </p>
 
-</div>
+      </div>
 
 
-<div class="service-card">
+      <div class="service-card">
 
-  <div class="service-num mono">02</div>
+        <div class="service-num mono">02</div>
 
-  <h3>
-    Restorative
-  </h3>
+        <h3>Restorative</h3>
 
-  <p>
-    Fillings, crowns, and same-day repairs using
-    materials matched to your bite, not just what's
-    fastest.
-  </p>
+        <p>
+          Fillings, crowns, and same-day repairs using materials matched
+          to your bite, not just what's fastest.
+        </p>
 
-</div>
+      </div>
 
 
-<div class="service-card">
+      <div class="service-card">
 
-  <div class="service-num mono">03</div>
+        <div class="service-num mono">03</div>
 
-  <h3>
-    Cosmetic &amp; Smile Design
-  </h3>
+        <h3>Cosmetic &amp; Smile Design</h3>
 
-  <p>
-    Whitening, bonding, and veneers planned with
-    digital previews, so you see the result before
-    we start.
-  </p>
+        <p>
+          Whitening, bonding, and veneers planned with digital previews,
+          so you see the result before we start.
+        </p>
 
-</div>
+      </div>
 
 
-<div class="service-card">
+      <div class="service-card">
 
-  <div class="service-num mono">04</div>
+        <div class="service-num mono">04</div>
 
-  <h3>
-    Orthodontics
-  </h3>
+        <h3>Orthodontics</h3>
 
-  <p>
-    Clear aligners and traditional braces for teens
-    and adults, with progress checks every 6 weeks.
-  </p>
+        <p>
+          Clear aligners and traditional braces for teens and adults,
+          with progress checks every 6 weeks.
+        </p>
 
-</div>
+      </div>
 
 
-<div class="service-card">
+      <div class="service-card">
 
-  <div class="service-num mono">05</div>
+        <div class="service-num mono">05</div>
 
-  <h3>
-    Oral Surgery
-  </h3>
+        <h3>Oral Surgery</h3>
 
-  <p>
-    Extractions and implants performed in-house,
-    with sedation options explained in plain language
-    upfront.
-  </p>
+        <p>
+          Extractions and implants performed in-house, with sedation options
+          explained in plain language upfront.
+        </p>
 
-</div>
+      </div>
 
 
-<div class="service-card">
+      <div class="service-card">
 
-  <div class="service-num mono">06</div>
+        <div class="service-num mono">06</div>
 
-  <h3>
-    Pediatric Dentistry
-  </h3>
+        <h3>Pediatric Dentistry</h3>
 
-  <p>
-    A calmer first visit for kids, with appointments
-    paced to their comfort, not the clock.
-  </p>
+        <p>
+          A calmer first visit for kids, with appointments paced to their
+          comfort, not the clock.
+        </p>
 
-</div>
+      </div>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 </section>
 
 
-<!-- PHILOSOPHY -->
+<!-- ================= PHILOSOPHY ================= -->
 
 <section class="philosophy" id="philosophy">
 
-<div class="wrap">
+  <div class="wrap">
 
-<div class="reveal">
+    <div class="reveal">
 
-  <blockquote>
-    "We'd rather spend three extra minutes explaining
-    an X-ray than have you leave with a plan you don't trust."
-  </blockquote>
+      <blockquote>
+        "We'd rather spend three extra minutes explaining an X-ray than have
+        you leave with a plan you don't trust."
+      </blockquote>
 
-  <p style="margin-top:18px;font-size:0.9rem;color:var(--ink-soft);">
-    — Dr. Naomi Ashworth, Founding Dentist
-  </p>
+      <p style="margin-top:18px;font-size:0.9rem;color:var(--ink-soft);">
+        — Dr. Naomi Ashworth, Founding Dentist
+      </p>
 
-</div>
-
-
-<div class="philosophy-points reveal">
+    </div>
 
 
-<div class="philosophy-point">
+    <div class="philosophy-points reveal">
 
-  <span class="p-mark mono">A</span>
+      <div class="philosophy-point">
 
-  <div>
+        <span class="p-mark mono">A</span>
 
-    <h4>
-      No treatment without explanation
-    </h4>
+        <div>
 
-    <p>
-      Every recommendation comes with the why:
-      the X-ray, the alternative, and the cost of waiting.
-    </p>
+          <h4>No treatment without explanation</h4>
 
-  </div>
+          <p>
+            Every recommendation comes with the why: the X-ray,
+            the alternative, and the cost of waiting.
+          </p>
 
-</div>
+        </div>
 
-
-<div class="philosophy-point">
-
-  <span class="p-mark mono">B</span>
-
-  <div>
-
-    <h4>
-      One dentist, start to finish
-    </h4>
-
-    <p>
-      You see the same clinician across visits,
-      so nobody's re-learning your history from a chart.
-    </p>
-
-  </div>
-
-</div>
+      </div>
 
 
-<div class="philosophy-point">
+      <div class="philosophy-point">
 
-  <span class="p-mark mono">C</span>
+        <span class="p-mark mono">B</span>
 
-  <div>
+        <div>
 
-    <h4>
-      Pricing before the drill
-    </h4>
+          <h4>One dentist, start to finish</h4>
 
-    <p>
-      A written estimate before any procedure —
-      no surprise line items on the way out.
-    </p>
+          <p>
+            You see the same clinician across visits, so nobody's
+            re-learning your history from a chart.
+          </p>
 
-  </div>
+        </div>
 
-</div>
+      </div>
 
 
-<div class="philosophy-point">
+      <div class="philosophy-point">
 
-  <span class="p-mark mono">D</span>
+        <span class="p-mark mono">C</span>
 
-  <div>
+        <div>
 
-    <h4>
-      Appointments that run on time
-    </h4>
+          <h4>Pricing before the drill</h4>
 
-    <p>
-      30-minute buffers between patients so a long
-      case doesn't cost you your lunch break.
-    </p>
+          <p>
+            A written estimate before any procedure — no surprise
+            line items on the way out.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="philosophy-point">
+
+        <span class="p-mark mono">D</span>
+
+        <div>
+
+          <h4>Appointments that run on time</h4>
+
+          <p>
+            30-minute buffers between patients so a long case
+            doesn't cost you your lunch break.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
 
   </div>
-
-</div>
-
-
-</div>
-
-</div>
 
 </section>
 
 
-<!-- TEAM -->
+<!-- ================= TEAM ================= -->
 
 <section id="team">
 
-<div class="wrap">
+  <div class="wrap">
 
-<div class="section-head reveal">
+    <div class="section-head reveal">
 
-  <span class="eyebrow">
-    Who you'll meet
-  </span>
+      <span class="eyebrow">Who you'll meet</span>
 
-  <h2>
-    A small team, on purpose.
-  </h2>
+      <h2>A small team, on purpose.</h2>
 
-  <p>
-    Four clinicians, one building. We kept it small
-    so scheduling stays simple and continuity stays intact.
-  </p>
+      <p>
+        Four clinicians, one building. We kept it small so scheduling stays
+        simple and continuity stays intact.
+      </p>
 
-</div>
+    </div>
 
 
-<div class="team-grid reveal">
+    <div class="team-grid reveal">
 
 
-<div class="team-card">
+      <div class="team-card">
 
-<div class="team-photo">
+        <div class="team-photo">
 
-<svg viewBox="0 0 24 24" fill="none">
+          <svg viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="8" r="4"
+              stroke="#173A38"
+              stroke-width="1.2"/>
 
-  <circle
-    cx="12"
-    cy="8"
-    r="4"
-    stroke="#173A38"
-    stroke-width="1.2"
-  />
+            <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"
+              stroke="#173A38"
+              stroke-width="1.2"/>
+          </svg>
 
-  <path
-    d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"
-    stroke="#173A38"
-    stroke-width="1.2"
-  />
+        </div>
 
-</svg>
+        <div class="team-body">
 
-</div>
+          <h4>Dr. Naomi Ashworth</h4>
 
-<div class="team-body">
+          <div class="team-role">
+            FOUNDING DENTIST · GENERAL &amp; COSMETIC
+          </div>
 
-<h4>
-  Dr. Naomi Ashworth
-</h4>
+          <p>
+            18 years practicing; trained at UCSF School of Dentistry.
+          </p>
 
-<div class="team-role">
-  FOUNDING DENTIST · GENERAL &amp; COSMETIC
-</div>
+        </div>
 
-<p>
-  18 years practicing; trained at UCSF School of Dentistry.
-</p>
+      </div>
 
-</div>
 
-</div>
+      <div class="team-card">
 
+        <div class="team-photo">
 
-<div class="team-card">
+          <svg viewBox="0 0 24 24" fill="none">
 
-<div class="team-photo">
+            <circle cx="12" cy="8" r="4"
+              stroke="#173A38"
+              stroke-width="1.2"/>
 
-<svg viewBox="0 0 24 24" fill="none">
+            <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"
+              stroke="#173A38"
+              stroke-width="1.2"/>
 
-  <circle
-    cx="12"
-    cy="8"
-    r="4"
-    stroke="#173A38"
-    stroke-width="1.2"
-  />
+          </svg>
 
-  <path
-    d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"
-    stroke="#173A38"
-    stroke-width="1.2"
-  />
+        </div>
 
-</svg>
+        <div class="team-body">
 
-</div>
+          <h4>Dr. Malik Osei</h4>
 
-<div class="team-body">
+          <div class="team-role">
+            ORAL SURGEON
+          </div>
 
-<h4>
-  Dr. Malik Osei
-</h4>
+          <p>
+            Specializes in implants and wisdom tooth extraction.
+          </p>
 
-<div class="team-role">
-  ORAL SURGEON
-</div>
+        </div>
 
-<p>
-  Specializes in implants and wisdom tooth extraction.
-</p>
+      </div>
 
-</div>
 
-</div>
+      <div class="team-card">
 
+        <div class="team-photo">
 
-<div class="team-card">
+          <svg viewBox="0 0 24 24" fill="none">
 
-<div class="team-photo">
+            <circle cx="12" cy="8" r="4"
+              stroke="#173A38"
+              stroke-width="1.2"/>
 
-<svg viewBox="0 0 24 24" fill="none">
+            <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"
+              stroke="#173A38"
+              stroke-width="1.2"/>
 
-  <circle
-    cx="12"
-    cy="8"
-    r="4"
-    stroke="#173A38"
-    stroke-width="1.2"
-  />
+          </svg>
 
-  <path
-    d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"
-    stroke="#173A38"
-    stroke-width="1.2"
-  />
+        </div>
 
-</svg>
+        <div class="team-body">
 
-</div>
+          <h4>Dr. Priya Chandra</h4>
 
-<div class="team-body">
+          <div class="team-role">
+            ORTHODONTIST
+          </div>
 
-<h4>
-  Dr. Priya Chandra
-</h4>
+          <p>
+            Runs our aligner and adolescent orthodontics program.
+          </p>
 
-<div class="team-role">
-  ORTHODONTIST
-</div>
+        </div>
 
-<p>
-  Runs our aligner and adolescent orthodontics program.
-</p>
+      </div>
 
-</div>
 
-</div>
+      <div class="team-card">
 
+        <div class="team-photo">
 
-<div class="team-card">
+          <svg viewBox="0 0 24 24" fill="none">
 
-<div class="team-photo">
+            <circle cx="12" cy="8" r="4"
+              stroke="#173A38"
+              stroke-width="1.2"/>
 
-<svg viewBox="0 0 24 24" fill="none">
+            <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"
+              stroke="#173A38"
+              stroke-width="1.2"/>
 
-  <circle
-    cx="12"
-    cy="8"
-    r="4"
-    stroke="#173A38"
-    stroke-width="1.2"
-  />
+          </svg>
 
-  <path
-    d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"
-    stroke="#173A38"
-    stroke-width="1.2"
-  />
+        </div>
 
-</svg>
+        <div class="team-body">
 
-</div>
+          <h4>Dr. Sam Whitfield</h4>
 
-<div class="team-body">
+          <div class="team-role">
+            PEDIATRIC DENTIST
+          </div>
 
-<h4>
-  Dr. Sam Whitfield
-</h4>
+          <p>
+            Focused on first visits and building comfort early.
+          </p>
 
-<div class="team-role">
-  PEDIATRIC DENTIST
-</div>
+        </div>
 
-<p>
-  Focused on first visits and building comfort early.
-</p>
+      </div>
 
-</div>
+    </div>
 
-</div>
-
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
 
-<!-- REVIEWS -->
+<!-- ================= REVIEWS ================= -->
 
 <section class="testimonials" id="reviews">
 
-<div class="wrap">
+  <div class="wrap">
 
-<div class="section-head reveal">
+    <div class="section-head reveal">
 
-  <span class="eyebrow">
-    Patient notes
-  </span>
+      <span class="eyebrow">Patient notes</span>
 
-  <h2>
-    What people tell us after, not just before.
-  </h2>
+      <h2>
+        What people tell us after, not just before.
+      </h2>
 
-</div>
+    </div>
 
 
-<div class="t-grid reveal">
+    <div class="t-grid reveal">
+
+      <div class="t-card">
+
+        <p>
+          First dentist who's ever shown me my own X-ray and pointed at
+          the actual problem. I finally understood what I was paying for.
+        </p>
+
+        <div class="t-name mono">
+          — R. Delgado
+        </div>
+
+      </div>
 
 
-<div class="t-card">
+      <div class="t-card">
 
-<p>
-  First dentist who's ever shown me my own X-ray
-  and pointed at the actual problem. I finally
-  understood what I was paying for.
-</p>
+        <p>
+          My son used to cry before every cleaning. Dr. Whitfield changed
+          that in one visit. We're not dreading appointments anymore.
+        </p>
 
-<div class="t-name mono">
-  — R. Delgado
-</div>
+        <div class="t-name mono">
+          — K. Fenwick
+        </div>
 
-</div>
-
-
-<div class="t-card">
-
-<p>
-  My son used to cry before every cleaning.
-  Dr. Whitfield changed that in one visit.
-  We're not dreading appointments anymore.
-</p>
-
-<div class="t-name mono">
-  — K. Fenwick
-</div>
-
-</div>
+      </div>
 
 
-<div class="t-card">
+      <div class="t-card">
 
-<p>
-  Got a written estimate before my crown, and it
-  matched the final bill exactly. That alone earned
-  my trust.
-</p>
+        <p>
+          Got a written estimate before my crown, and it matched the final
+          bill exactly. That alone earned my trust.
+        </p>
 
-<div class="t-name mono">
-  — A. Okafor
-</div>
+        <div class="t-name mono">
+          — A. Okafor
+        </div>
 
-</div>
+      </div>
 
+    </div>
 
-</div>
-
-</div>
+  </div>
 
 </section>
 
 
-<!-- BOOKING -->
+<!-- ================= BOOKING ================= -->
 
 <section class="booking" id="booking">
 
-<div class="wrap">
+  <div class="wrap">
 
 
-<div>
+    <div>
 
-<span
-  class="eyebrow"
-  style="color:var(--coral-deep);"
->
-  Book a visit
-</span>
+      <span
+        class="eyebrow"
+        style="color:var(--coral-deep);">
+        Book a visit
+      </span>
 
-<h2>
-  Let's find a time.
-</h2>
+      <h2>
+        Let's find a time.
+      </h2>
 
-<p>
-  New patients usually hear back within one business
-  day. For dental emergencies, call the studio directly.
-</p>
+      <p>
+        New patients can send their appointment request directly
+        through WhatsApp. For dental emergencies, call the studio directly.
+      </p>
 
 
-<div class="hours-list">
+      <div class="hours-list">
 
-<div class="hours-row">
-  <span>Mon – Thu</span>
-  <span>8:00 AM – 6:00 PM</span>
-</div>
+        <div class="hours-row">
+          <span>Mon – Thu</span>
+          <span>8:00 AM – 6:00 PM</span>
+        </div>
 
-<div class="hours-row">
-  <span>Friday</span>
-  <span>8:00 AM – 3:00 PM</span>
-</div>
+        <div class="hours-row">
+          <span>Friday</span>
+          <span>8:00 AM – 3:00 PM</span>
+        </div>
 
-<div class="hours-row">
-  <span>Saturday</span>
-  <span>9:00 AM – 1:00 PM</span>
-</div>
+        <div class="hours-row">
+          <span>Saturday</span>
+          <span>9:00 AM – 1:00 PM</span>
+        </div>
 
-<div class="hours-row">
-  <span>Sunday</span>
-  <span>Closed</span>
-</div>
+        <div class="hours-row">
+          <span>Sunday</span>
+          <span>Closed</span>
+        </div>
 
-</div>
+      </div>
 
 
-<p style="margin-top:22px;font-size:0.9rem;">
-  Studio City Dental Building · Suite 204<br>
-  (555) 019-4482
-</p>
+      <p style="margin-top:22px;font-size:0.9rem;">
 
-</div>
+        Studio City Dental Building · Suite 204<br>
 
+        <a
+          href="tel:5550194482"
+          style="text-decoration:none;">
+          (555) 019-4482
+        </a>
 
-<!-- APPOINTMENT FORM -->
+      </p>
 
-<form id="bookingForm">
+    </div>
 
 
-<div class="field-row">
+    <!-- APPOINTMENT FORM -->
 
-<div class="field">
+    <form id="bookingForm">
 
-<label for="fname">
-  First name
-</label>
 
-<input
-  id="fname"
-  name="firstName"
-  type="text"
-  autocomplete="given-name"
-  required
->
+      <div class="field-row">
 
-</div>
+        <div class="field">
 
+          <label for="fname">
+            First name
+          </label>
 
-<div class="field">
+          <input
+            id="fname"
+            name="fname"
+            type="text"
+            autocomplete="given-name"
+            required>
 
-<label for="lname">
-  Last name
-</label>
+        </div>
 
-<input
-  id="lname"
-  name="lastName"
-  type="text"
-  autocomplete="family-name"
-  required
->
 
-</div>
+        <div class="field">
 
-</div>
+          <label for="lname">
+            Last name
+          </label>
 
+          <input
+            id="lname"
+            name="lname"
+            type="text"
+            autocomplete="family-name"
+            required>
 
-<div class="field-row">
+        </div>
 
-<div class="field">
+      </div>
 
-<label for="email">
-  Email
-</label>
 
-<input
-  type="email"
-  id="email"
-  name="email"
-  autocomplete="email"
-  required
->
+      <div class="field-row">
 
-</div>
+        <div class="field">
 
+          <label for="email">
+            Email
+          </label>
 
-<div class="field">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            required>
 
-<label for="phone">
-  Phone
-</label>
+        </div>
 
-<input
-  type="tel"
-  id="phone"
-  name="phone"
-  autocomplete="tel"
-  required
->
 
-</div>
+        <div class="field">
 
-</div>
+          <label for="phone">
+            Phone
+          </label>
 
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            autocomplete="tel"
+            required>
 
-<div class="field">
+        </div>
 
-<label for="reason">
-  Reason for visit
-</label>
+      </div>
 
-<select
-  id="reason"
-  name="reason"
->
 
-<option>
-  Routine cleaning &amp; exam
-</option>
+      <div class="field">
 
-<option>
-  New patient consultation
-</option>
+        <label for="reason">
+          Reason for visit
+        </label>
 
-<option>
-  Restorative work (filling, crown)
-</option>
+        <select id="reason" name="reason">
 
-<option>
-  Cosmetic consultation
-</option>
+          <option>
+            Routine cleaning &amp; exam
+          </option>
 
-<option>
-  Orthodontics
-</option>
+          <option>
+            New patient consultation
+          </option>
 
-<option>
-  Dental pain / possible emergency
-</option>
+          <option>
+            Restorative work (filling, crown)
+          </option>
 
-</select>
+          <option>
+            Cosmetic consultation
+          </option>
 
-</div>
+          <option>
+            Orthodontics
+          </option>
 
+          <option>
+            Dental pain / possible emergency
+          </option>
 
-<div class="field">
+        </select>
 
-<label for="notes">
-  Anything we should know?
-</label>
+      </div>
 
-<textarea
-  id="notes"
-  name="notes"
-  rows="3"
-  placeholder="Optional"
-></textarea>
 
-</div>
+      <div class="field">
 
+        <label for="notes">
+          Anything we should know?
+        </label>
 
-<button
-  type="submit"
-  class="submit-btn"
-  id="submitBtn"
->
-  Request appointment
-</button>
+        <textarea
+          id="notes"
+          name="notes"
+          rows="3"
+          placeholder="Optional"></textarea>
 
+      </div>
 
-<p class="form-note">
-  This sends a request — we'll call to confirm a specific time.
-</p>
 
+      <button
+        type="submit"
+        class="submit-btn">
+        Request appointment on WhatsApp
+      </button>
 
-<div
-  class="confirm-msg"
-  id="confirmMsg"
-  role="alert"
-></div>
 
+      <p class="form-note">
+        Your appointment details will open in WhatsApp.
+        Please review them and tap Send to submit your request.
+      </p>
 
-</form>
 
-</div>
+      <div
+        class="confirm-msg"
+        id="confirmMsg">
+      </div>
+
+
+    </form>
+
+  </div>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-<div class="wrap footer-grid">
+  <div class="wrap footer-grid">
 
 
-<div>
+    <div>
 
-<div
-  class="logo"
-  style="margin-bottom:12px;"
->
+      <div
+        class="logo"
+        style="margin-bottom:12px;">
 
-<svg
-  class="logo-mark"
-  viewBox="0 0 24 24"
-  fill="none"
->
+        <svg
+          class="logo-mark"
+          viewBox="0 0 24 24"
+          fill="none">
 
-<path
-  d="M12 2C8 2 5 5 5 9c0 3 1 4.5 1.5 8 .3 2 .8 3.5 2 3.5s1.4-1.8 1.7-3.2c.3-1.5.6-2.3 1.8-2.3s1.5.8 1.8 2.3c.3 1.4.5 3.2 1.7 3.2s1.7-1.5 2-3.5c.5-3.5 1.5-5 1.5-8 0-4-3-7-7-7Z"
-  stroke="#173A38"
-  stroke-width="1.3"
-/>
+          <path
+            d="M12 2C8 2 5 5 5 9c0 3 1 4.5 1.5 8 .3 2 .8 3.5 2 3.5s1.4-1.8 1.7-3.2c.3-1.5.6-2.3 1.8-2.3s1.5.8 1.8 2.3c.3 1.4.5 3.2 1.7 3.2s1.7-1.5 2-3.5c.5-3.5 1.5-5 1.5-8 0-4-3-7-7-7Z"
+            stroke="#173A38"
+            stroke-width="1.3"/>
 
-</svg>
+        </svg>
 
-Enamel
+        Enamel
 
-</div>
-
-<p
-  style="font-size:0.9rem;color:var(--ink-soft);max-width:32ch;"
->
-  A modern dental studio in Studio City,
-  open six days a week.
-</p>
-
-</div>
+      </div>
 
 
-<div>
+      <p
+        style="font-size:0.9rem;color:var(--ink-soft);max-width:32ch;">
 
-<h5>
-  STUDIO
-</h5>
+        A modern dental studio in Studio City,
+        open six days a week.
 
-<ul>
+      </p>
 
-<li>
-  <a href="#services">
-    Services
-  </a>
-</li>
-
-<li>
-  <a href="#philosophy">
-    Our approach
-  </a>
-</li>
-
-<li>
-  <a href="#team">
-    Team
-  </a>
-</li>
-
-</ul>
-
-</div>
+    </div>
 
 
-<div>
+    <div>
 
-<h5>
-  PATIENTS
-</h5>
+      <h5>STUDIO</h5>
 
-<ul>
+      <ul>
 
-<li>
-  <a href="#booking">
-    Book a visit
-  </a>
-</li>
+        <li>
+          <a href="#services">
+            Services
+          </a>
+        </li>
 
-<li>
-  <a href="#reviews">
-    Reviews
-  </a>
-</li>
+        <li>
+          <a href="#philosophy">
+            Our approach
+          </a>
+        </li>
 
-<li>
-  <a href="#">
-    New patient forms
-  </a>
-</li>
+        <li>
+          <a href="#team">
+            Team
+          </a>
+        </li>
 
-</ul>
+      </ul>
 
-</div>
+    </div>
 
 
-<div>
+    <div>
 
-<h5>
-  CONTACT
-</h5>
+      <h5>PATIENTS</h5>
 
-<ul>
+      <ul>
 
-<li>
-  <a href="tel:7092877898">
-    7092877898
-  </a>
-</li>
+        <li>
+          <a href="#booking">
+            Book a visit
+          </a>
+        </li>
 
-<li>
-  <a href="mailto:hello@enameldental.example">
-    hello@enameldental.example
-  </a>
-</li>
+        <li>
+          <a href="#reviews">
+            Reviews
+          </a>
+        </li>
 
-<li>
-  <a href="#">
-    Get directions
-  </a>
-</li>
+        <li>
+          <a href="#booking">
+            New patient forms
+          </a>
+        </li>
 
-</ul>
+      </ul>
 
-</div>
+    </div>
 
 
-</div>
+    <div>
+
+      <h5>CONTACT</h5>
+
+      <ul>
+
+        <li>
+          <a href="tel:5550194482">
+            (555) 019-4482
+          </a>
+        </li>
+
+        <li>
+          <a href="mailto:hello@enameldental.example">
+            hello@enameldental.example
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://wa.me/917092877898"
+            target="_blank"
+            rel="noopener">
+            WhatsApp
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
 
 
-<div class="wrap footer-bottom">
+  </div>
 
-<span>
-  © 2026 Enamel Dental Studio.
-</span>
 
-<span>
-  Studio City Dental Building, Suite 204
-</span>
+  <div class="wrap footer-bottom">
 
-</div>
+    <span>
+      © 2026 Enamel Dental Studio.
+    </span>
+
+    <span>
+      Studio City Dental Building, Suite 204
+    </span>
+
+  </div>
 
 </footer>
 
 
+<!-- ================= FLOATING WHATSAPP BUTTON ================= -->
+
+<a
+  class="whatsapp-float"
+  href="https://wa.me/917092877898"
+  target="_blank"
+  rel="noopener"
+  aria-label="Chat with Enamel Dental Studio on WhatsApp"
+  title="Chat on WhatsApp">
+
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+
+    <path
+      d="M20.52 3.48A11.87 11.87 0 0 0 12.07 0
+      C5.5 0 .16 5.34.16 11.91c0 2.1.55 4.15 1.6 5.96L.05 24
+      l6.28-1.65a11.9 11.9 0 0 0 5.74 1.47h.01
+      c6.57 0 11.91-5.34 11.91-11.91
+      0-3.18-1.24-6.17-3.47-8.43Z"
+      fill="white"/>
+
+    <path
+      d="M17.47 13.93c-.3-.15-1.78-.88-2.06-.98
+      -.28-.1-.48-.15-.68.15-.2.3-.78.98-.95 1.18
+      -.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47
+      -.88-.79-1.47-1.77-1.64-2.07
+      -.17-.3-.02-.46.13-.61
+      .13-.13.3-.35.45-.52
+      .15-.17.2-.3.3-.5
+      .1-.2.05-.37-.02-.52
+      -.07-.15-.68-1.64-.93-2.24
+      -.24-.59-.49-.51-.68-.52
+      -.17-.01-.37-.01-.57-.01
+      -.2 0-.52.07-.79.37
+      -.27.3-1.04 1.02-1.04 2.49
+      0 1.47 1.07 2.89 1.22 3.09
+      .15.2 2.1 3.21 5.09 4.5
+      .71.31 1.27.5 1.7.64
+      .71.23 1.36.2 1.87.12
+      .57-.09 1.78-.73 2.03-1.44
+      .25-.71.25-1.32.17-1.44
+      -.07-.13-.27-.2-.57-.35Z"
+      fill="#25D366"/>
+
+  </svg>
+
+</a>
+
+
 <script>
 
-/* =========================================================
-   INTERACTIVE TOOTH DIAGRAM
-========================================================= */
+  /* =========================================================
+     INTERACTIVE SMILE DIAGRAM
+  ========================================================= */
 
-const svg = document.getElementById('smileSvg');
-const info = document.getElementById('smileInfo');
+  const svg = document.getElementById('smileSvg');
+  const info = document.getElementById('smileInfo');
 
 
-const services = {
+  const services = {
 
-  front:{
-    tag:'COSMETIC & SMILE DESIGN',
-    title:'Incisors — the ones people notice',
-    body:'Whitening, bonding, and veneer work happens here first, since these teeth carry your smile.'
-  },
+    front:{
+      tag:'COSMETIC & SMILE DESIGN',
+      title:'Incisors — the ones people notice',
+      body:'Whitening, bonding, and veneer work happens here first, since these teeth carry your smile.'
+    },
 
-  canine:{
-    tag:'RESTORATIVE',
-    title:'Canines — the anchor points',
-    body:'Strong and pointed by design; we watch these for wear from grinding and misalignment.'
-  },
+    canine:{
+      tag:'RESTORATIVE',
+      title:'Canines — the anchor points',
+      body:'Strong and pointed by design; we watch these for wear from grinding and misalignment.'
+    },
 
-  premolar:{
-    tag:'PREVENTIVE & HYGIENE',
-    title:'Premolars — the transition teeth',
-    body:'Common spot for early decay between molars and front teeth; sealants go here first.'
-  },
+    premolar:{
+      tag:'PREVENTIVE & HYGIENE',
+      title:'Premolars — the transition teeth',
+      body:'Common spot for early decay between molars and front teeth; sealants go here first.'
+    },
 
-  molar:{
-    tag:'RESTORATIVE & SURGERY',
-    title:'Molars — the workhorses',
-    body:'Where fillings, crowns, and wisdom-tooth planning usually happen — they do the heavy chewing.'
+    molar:{
+      tag:'RESTORATIVE & SURGERY',
+      title:'Molars — the workhorses',
+      body:'Where fillings, crowns, and wisdom-tooth planning usually happen — they do the heavy chewing.'
+    }
+
+  };
+
+
+  const layout = [];
+
+  const totalTeeth = 16;
+
+  const startX = 30;
+  const endX = 430;
+  const midY = 85;
+
+
+  for(let i=0;i<totalTeeth;i++){
+
+    const t = i/(totalTeeth-1);
+
+    const x =
+      startX +
+      t*(endX-startX);
+
+    const archDrop =
+      Math.sin(t*Math.PI) * -34;
+
+    const y =
+      midY + archDrop;
+
+
+    let type;
+
+
+    if(i<=2 || i>=13){
+      type='molar';
+    }
+
+    else if(i===3 || i===12){
+      type='premolar';
+    }
+
+    else if(i===4 || i===11){
+      type='premolar';
+    }
+
+    else if(i===5 || i===10){
+      type='canine';
+    }
+
+    else{
+      type='front';
+    }
+
+
+    layout.push({
+      num:i+1,
+      x,
+      y,
+      type
+    });
+
   }
 
-};
+
+  layout.forEach(t=>{
+
+    const g =
+      document.createElementNS(
+        'http://www.w3.org/2000/svg',
+        'g'
+      );
 
 
-const layout = [];
+    g.setAttribute('class','tooth');
 
-const totalTeeth = 16;
+    g.setAttribute('tabindex','0');
 
-const startX = 30;
+    g.setAttribute('role','button');
 
-const endX = 430;
-
-const midY = 85;
-
-
-for(let i = 0; i < totalTeeth; i++){
-
-  const t = i / (totalTeeth - 1);
-
-  const x = startX + t * (endX - startX);
-
-  const archDrop = Math.sin(t * Math.PI) * -34;
-
-  const y = midY + archDrop;
-
-  let type;
-
-  if(i <= 2 || i >= 13){
-
-    type = 'molar';
-
-  }else if(i === 3 || i === 12){
-
-    type = 'premolar';
-
-  }else if(i === 4 || i === 11){
-
-    type = 'premolar';
-
-  }else if(i === 5 || i === 10){
-
-    type = 'canine';
-
-  }else{
-
-    type = 'front';
-
-  }
-
-  layout.push({
-    num:i + 1,
-    x:x,
-    y:y,
-    type:type
-  });
-
-}
-
-
-layout.forEach(t => {
-
-  const g =
-    document.createElementNS(
-      'http://www.w3.org/2000/svg',
-      'g'
+    g.setAttribute(
+      'aria-label',
+      'Tooth number '+t.num
     );
 
-  g.setAttribute('class','tooth');
 
-  g.setAttribute('tabindex','0');
-
-  g.setAttribute('role','button');
-
-  g.setAttribute(
-    'aria-label',
-    'Tooth number ' + t.num
-  );
-
-
-  const w =
-    t.type === 'molar'
+    const w =
+      t.type==='molar'
       ? 30
-      : t.type === 'premolar'
-        ? 24
-        : t.type === 'canine'
-          ? 22
-          : 20;
+      : t.type==='premolar'
+      ? 24
+      : t.type==='canine'
+      ? 22
+      : 20;
 
 
-  const h =
-    t.type === 'molar'
+    const h =
+      t.type==='molar'
       ? 34
       : 30;
 
 
-  const path =
-    document.createElementNS(
-      'http://www.w3.org/2000/svg',
-      'path'
-    );
-
-
-  const x0 = t.x - w / 2;
-
-  const y0 = t.y - h / 2;
-
-
-  const d = `
-    M ${x0} ${y0+8}
-    Q ${x0} ${y0} ${x0+w/2} ${y0}
-    Q ${x0+w} ${y0} ${x0+w} ${y0+8}
-    L ${x0+w} ${y0+h-10}
-    Q ${x0+w} ${y0+h} ${x0+w/2} ${y0+h}
-    Q ${x0} ${y0+h} ${x0} ${y0+h-10}
-    Z
-  `;
-
-
-  path.setAttribute('d',d);
-
-
-  const text =
-    document.createElementNS(
-      'http://www.w3.org/2000/svg',
-      'text'
-    );
-
-
-  text.setAttribute('x',t.x);
-
-  text.setAttribute('y',t.y+4);
-
-  text.textContent = t.num;
-
-
-  g.appendChild(path);
-
-  g.appendChild(text);
-
-  svg.appendChild(g);
-
-
-  function activate(){
-
-    document
-      .querySelectorAll('.tooth.active')
-      .forEach(el => {
-        el.classList.remove('active');
-      });
-
-
-    g.classList.add('active');
-
-
-    const s = services[t.type];
-
-
-    info.innerHTML = `
-      <span class="tag">${s.tag}</span>
-      <h4>${s.title}</h4>
-      <p>${s.body}</p>
-    `;
-
-  }
-
-
-  g.addEventListener(
-    'click',
-    activate
-  );
-
-
-  g.addEventListener(
-    'keydown',
-    e => {
-
-      if(
-        e.key === 'Enter' ||
-        e.key === ' '
-      ){
-
-        e.preventDefault();
-
-        activate();
-
-      }
-
-    }
-  );
-
-
-  g.addEventListener(
-    'mouseenter',
-    () => {
-
-      const s = services[t.type];
-
-      info.innerHTML = `
-        <span class="tag">${s.tag}</span>
-        <h4>${s.title}</h4>
-        <p>${s.body}</p>
-      `;
-
-    }
-  );
-
-});
-
-
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
-
-const revealEls =
-  document.querySelectorAll('.reveal');
-
-
-const io =
-  new IntersectionObserver(
-    entries => {
-
-      entries.forEach(en => {
-
-        if(en.isIntersecting){
-
-          en.target.classList.add('in');
-
-          io.unobserve(en.target);
-
-        }
-
-      });
-
-    },
-    {
-      threshold:0.15
-    }
-  );
-
-
-revealEls.forEach(
-  el => io.observe(el)
-);
-
-
-/* =========================================================
-   APPOINTMENT FORM
-========================================================= */
-
-const bookingForm =
-  document.getElementById('bookingForm');
-
-
-const submitBtn =
-  document.getElementById('submitBtn');
-
-
-const confirmMsg =
-  document.getElementById('confirmMsg');
-
-
-bookingForm.addEventListener(
-  'submit',
-  async function(e){
-
-    e.preventDefault();
-
-
-    submitBtn.disabled = true;
-
-    submitBtn.textContent = 'Sending...';
-
-
-    confirmMsg.classList.remove('show');
-
-    confirmMsg.textContent = '';
-
-
-    const appointment = {
-
-      firstName:
-        document
-          .getElementById('fname')
-          .value
-          .trim(),
-
-      lastName:
-        document
-          .getElementById('lname')
-          .value
-          .trim(),
-
-      email:
-        document
-          .getElementById('email')
-          .value
-          .trim(),
-
-      phone:
-        document
-          .getElementById('phone')
-          .value
-          .trim(),
-
-      reason:
-        document
-          .getElementById('reason')
-          .value,
-
-      notes:
-        document
-          .getElementById('notes')
-          .value
-          .trim()
-
-    };
-
-
-    try{
-
-      /*
-       * This sends the appointment information
-       * to your backend.
-       *
-       * Your backend then sends the SMS to:
-       *
-       * +91 7092877898
-       */
-
-      const response =
-        await fetch(
-          '/api/appointment',
-          {
-            method:'POST',
-
-            headers:{
-              'Content-Type':'application/json'
-            },
-
-            body:
-              JSON.stringify(appointment)
-          }
-        );
-
-
-      const result =
-        await response.json();
-
-
-      if(!response.ok){
-
-        throw new Error(
-          result.message ||
-          'Unable to send appointment request.'
-        );
-
-      }
-
-
-      confirmMsg.textContent =
-        "Thanks — we've received your appointment request. We'll call within one business day to confirm your time.";
-
-
-      confirmMsg.classList.add('show');
-
-
-      submitBtn.textContent =
-        'Request sent';
-
-
-      bookingForm.reset();
-
-
-    }catch(error){
-
-      console.error(
-        'Appointment error:',
-        error
+    const path =
+      document.createElementNS(
+        'http://www.w3.org/2000/svg',
+        'path'
       );
 
 
-      confirmMsg.textContent =
-        'Sorry, we could not send your request. Please call 7092877898 directly.';
+    const x0 =
+      t.x - w/2;
+
+    const y0 =
+      t.y - h/2;
 
 
-      confirmMsg.classList.add('show');
+    const d =
+      `M ${x0} ${y0+8}
+       Q ${x0} ${y0} ${x0+w/2} ${y0}
+       Q ${x0+w} ${y0} ${x0+w} ${y0+8}
+       L ${x0+w} ${y0+h-10}
+       Q ${x0+w} ${y0+h} ${x0+w/2} ${y0+h}
+       Q ${x0} ${y0+h} ${x0} ${y0+h-10}
+       Z`;
 
 
-      submitBtn.disabled = false;
+    path.setAttribute('d',d);
 
-      submitBtn.textContent =
-        'Request appointment';
+
+    const text =
+      document.createElementNS(
+        'http://www.w3.org/2000/svg',
+        'text'
+      );
+
+
+    text.setAttribute('x',t.x);
+
+    text.setAttribute('y',t.y+4);
+
+    text.textContent=t.num;
+
+
+    g.appendChild(path);
+
+    g.appendChild(text);
+
+    svg.appendChild(g);
+
+
+    function activate(){
+
+      document
+        .querySelectorAll('.tooth.active')
+        .forEach(el=>{
+          el.classList.remove('active');
+        });
+
+
+      g.classList.add('active');
+
+
+      const s =
+        services[t.type];
+
+
+      info.innerHTML =
+        `<span class="tag">${s.tag}</span>
+         <h4>${s.title}</h4>
+         <p>${s.body}</p>`;
 
     }
 
-  }
-);
+
+    g.addEventListener(
+      'click',
+      activate
+    );
+
+
+    g.addEventListener(
+      'keydown',
+      e=>{
+
+        if(
+          e.key==='Enter' ||
+          e.key===' '
+        ){
+
+          e.preventDefault();
+
+          activate();
+
+        }
+
+      }
+    );
+
+
+    g.addEventListener(
+      'mouseenter',
+      ()=>{
+
+        const s =
+          services[t.type];
+
+
+        info.innerHTML =
+          `<span class="tag">${s.tag}</span>
+           <h4>${s.title}</h4>
+           <p>${s.body}</p>`;
+
+      }
+    );
+
+  });
+
+
+  /* =========================================================
+     REVEAL ON SCROLL
+  ========================================================= */
+
+  const revealEls =
+    document.querySelectorAll('.reveal');
+
+
+  const io =
+    new IntersectionObserver(
+      entries=>{
+
+        entries.forEach(en=>{
+
+          if(en.isIntersecting){
+
+            en.target.classList.add('in');
+
+            io.unobserve(en.target);
+
+          }
+
+        });
+
+      },
+      {
+        threshold:0.15
+      }
+    );
+
+
+  revealEls.forEach(
+    el=>io.observe(el)
+  );
+
+
+  /* =========================================================
+     WHATSAPP APPOINTMENT FORM
+  ========================================================= */
+
+  document
+    .getElementById('bookingForm')
+    .addEventListener(
+      'submit',
+      function(e){
+
+        e.preventDefault();
+
+
+        /* YOUR WHATSAPP NUMBER */
+
+        const yourWhatsAppNumber =
+          '917092877898';
+
+
+        /* GET FORM VALUES */
+
+        const firstName =
+          document
+            .getElementById('fname')
+            .value
+            .trim();
+
+
+        const lastName =
+          document
+            .getElementById('lname')
+            .value
+            .trim();
+
+
+        const email =
+          document
+            .getElementById('email')
+            .value
+            .trim();
+
+
+        const phone =
+          document
+            .getElementById('phone')
+            .value
+            .trim();
+
+
+        const reason =
+          document
+            .getElementById('reason')
+            .value;
+
+
+        const notes =
+          document
+            .getElementById('notes')
+            .value
+            .trim();
+
+
+        /* CREATE WHATSAPP MESSAGE */
+
+        const message =
+`*NEW APPOINTMENT REQUEST*
+*ENAMEL DENTAL STUDIO*
+
+--------------------------------
+
+*Patient Name:*
+${firstName} ${lastName}
+
+*Email:*
+${email}
+
+*Phone:*
+${phone}
+
+*Reason for Visit:*
+${reason}
+
+*Additional Notes:*
+${notes || 'None'}
+
+--------------------------------
+
+Please contact the patient to confirm the appointment.`;
+
+
+        /*
+          Encode the message so spaces,
+          symbols and line breaks work correctly.
+        */
+
+        const encodedMessage =
+          encodeURIComponent(message);
+
+
+        /*
+          WhatsApp link.
+        */
+
+        const whatsappURL =
+          `https://wa.me/${yourWhatsAppNumber}?text=${encodedMessage}`;
+
+
+        /*
+          Open WhatsApp.
+        */
+
+        window.open(
+          whatsappURL,
+          '_blank',
+          'noopener,noreferrer'
+        );
+
+
+        /*
+          Show confirmation message.
+        */
+
+        const confirmMsg =
+          document.getElementById(
+            'confirmMsg'
+          );
+
+
+        confirmMsg.innerHTML =
+          '✓ Your appointment details are ready in WhatsApp. ' +
+          'Please review the message and tap <strong>Send</strong> to submit your request.';
+
+
+        confirmMsg.classList.add('show');
+
+
+        /*
+          Change button text.
+        */
+
+        this
+          .querySelector('.submit-btn')
+          .textContent =
+          'WhatsApp opened';
+
+
+      }
+    );
 
 </script>
 
 </body>
 </html>
-
- 
